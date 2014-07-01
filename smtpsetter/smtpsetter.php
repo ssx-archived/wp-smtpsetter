@@ -30,3 +30,32 @@ function smtpsetter_showhtml($param1 = 0, $param2 = "test") {
 	// content will be added when function 'smtpsetter_showhtml()' is called
 	return $smtpsetter_html;
 }
+
+add_action('phpmailer_init','send_smtp_email');
+function send_smtp_email( $phpmailer )
+{
+    // Define that we are sending with SMTP
+    $phpmailer->isSMTP();
+
+    // The hostname of the mail server
+    $phpmailer->Host = "smtp.example.org";
+
+    // Use SMTP authentication (true|false)
+    $phpmailer->SMTPAuth = true;
+
+    // SMTP port number - likely to be 25, 465 or 587
+    $phpmailer->Port = "587";
+
+    // Username to use for SMTP authentication
+    $phpmailer->Username = "yourusername";
+
+    // Password to use for SMTP authentication
+    $phpmailer->Password = "yourpassword";
+
+    // The encryption system to use - ssl (deprecated) or tls
+    $phpmailer->SMTPSecure = "tls";
+
+	// If you want to set the from email/name then do so here
+    $phpmailer->From = "your-email-address";
+    $phpmailer->FromName = "Your Name";
+}
