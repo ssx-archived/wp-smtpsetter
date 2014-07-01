@@ -2,11 +2,11 @@
 /*
 Plugin Name: smtpsetter
 Plugin Script: smtpsetter.php
-Plugin URI: http://.../smtpsetter (where should people go for this plugin?)
-Description: (...)
+Plugin URI: https://github.com/ssx/wp-smtpsetter/
+Description: A Wordpress plugin that will you to set the SMTP server used throughout Wordpress
 Version: 0.1
-Author: Your name
-Author URI: http://... (your blog/site URL)
+Author: Scott Wilcox
+Author URI: http://dor.ky
 
 === RELEASE NOTES ===
 2014-07-01 - v1.0 -Initial version
