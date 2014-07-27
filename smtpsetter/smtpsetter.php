@@ -36,9 +36,9 @@ class MySettingsPage
         // This page will be under "Settings"
         add_options_page(
             'Settings Admin',
-            'My Settings',
+            'SMTP Settings',
             'manage_options',
-            'my-setting-admin',
+            'smtp-setter-admin',
             array( $this, 'create_admin_page' )
         );
     }
@@ -53,12 +53,12 @@ class MySettingsPage
         ?>
         <div class="wrap">
             <?php screen_icon(); ?>
-            <h2>My Settings</h2>
+            <h2>SMTP Settings</h2>
             <form method="post" action="options.php">
             <?php
                 // This prints out all hidden setting fields
                 settings_fields( 'my_option_group' );
-                do_settings_sections( 'my-setting-admin' );
+                do_settings_sections( 'smtp-setter-admin' );
                 submit_button();
             ?>
             </form>
@@ -81,14 +81,14 @@ class MySettingsPage
             'setting_section_id', // ID
             'My Custom Settings', // Title
             array( $this, 'print_section_info' ), // Callback
-            'my-setting-admin' // Page
+            'smtp-setter-admin' // Page
         );
 
         add_settings_field(
             'id_number', // ID
             'ID Number', // Title
             array( $this, 'id_number_callback' ), // Callback
-            'my-setting-admin', // Page
+            'smtp-setter-admin', // Page
             'setting_section_id' // Section
         );
 
@@ -96,7 +96,7 @@ class MySettingsPage
             'title',
             'Title',
             array( $this, 'title_callback' ),
-            'my-setting-admin',
+            'smtp-setter-admin',
             'setting_section_id'
         );
     }
